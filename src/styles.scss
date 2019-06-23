@@ -1,0 +1,117 @@
+.live-chart {
+  width: 100%;
+ 
+  h1 {
+    font-weight: 700;
+    font-size: 60px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 50px 0;
+    margin: 0;
+  }
+
+  .chart {
+    position: relative;
+  }
+
+  .baseline {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    z-index: 2;
+    background: #555;
+
+    span {
+      position: absolute;
+      left: 0;
+      top: -40px;
+      transform: translateX(-50%);
+      font-style: italic;
+    }
+  }
+
+  .chart-bars {
+    position: relative;
+    margin: 50px auto;
+    height: 100%;
+    width: 75%;
+
+    &.with-baseline {
+      .bar-wrapper {
+        left: 50%;
+
+        &.behind-baseline {
+          left: auto;
+        }
+      }
+    } 
+  }
+  
+  .bar-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s ease;
+
+    label {
+      position: absolute;
+      width: 200px;
+      left: -210px;
+      text-align: right;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      img {
+        max-height: 40px;
+        margin-left: 10px;
+      }
+    }
+
+    .value {
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      font-weight: 700;
+      margin-left: 10px;
+    }
+
+    .bar {
+      width: 100%;
+    }
+
+    &.behind-baseline {
+      left: auto;
+      right: 50%;
+
+      label {
+        right: -210px;
+        left: auto;
+        text-align: left;
+        flex-direction: row-reverse;
+
+        img {
+          margin: 0 10px 0 0;
+        }
+      }
+
+      .value {
+        right: 100%;
+        left: auto;
+        margin-left: 0;
+        margin-right: 10px;
+      }
+    }
+  }
+}
