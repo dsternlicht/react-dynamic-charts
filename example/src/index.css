@@ -24,6 +24,18 @@ button:hover {
   background: #111;
 }
 
+.main-section {
+  position: relative;
+}
+
+.main-section > a {
+  position: fixed; 
+  z-index: 1000; 
+  top: 0px; 
+  right: 0px; 
+  border: 0px;
+}
+
 .chart-row {
   display: flex;
   align-items: stretch;
