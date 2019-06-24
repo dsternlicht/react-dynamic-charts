@@ -22,9 +22,9 @@ export default class App extends Component {
             <p>A few words about live charts</p>
           </div>
           <LiveBarChart 
-            data={helpers.generateData(100, mocks.defaultChart)}
+            data={helpers.generateData(100, mocks.defaultChart, { prefix: 'Iteration' })}
             iterationTimeout={100}
-            showTitle={false}
+            showTitle={true}
             mainWrapperStyles={{
               backgroundColor: '#fff',
             }}
@@ -43,26 +43,10 @@ export default class App extends Component {
 
         <div className="chart-row">
           <div className="description">
-            <h3>Baseline</h3>
-          </div>
-          <LiveBarChart 
-            data={helpers.generateData(20, mocks.baselineWithNegatives, { prefix: 'Year', initialValue: 2000 }, 100)}
-            barHeight={30}
-            iterationTimeout={1000}
-            startRunningTimeout={1500}
-            baseline={0}
-            mainWrapperStyles={{
-              backgroundColor: '#fff'
-            }}
-          />
-        </div>
-
-        <div className="chart-row">
-          <div className="description">
             <h3>Custom Labels</h3>
           </div>
           <LiveBarChart 
-            data={helpers.generateData(100, mocks.customLabels, { prefix: 'Round' }, 10)}
+            data={helpers.generateData(100, mocks.customLabels, { prefix: 'Year', initialValue: 2000 }, 10)}
             iterationTimeout={100}
             chartWrapperStyles={{
               maxWidth: '1200px'
@@ -71,6 +55,23 @@ export default class App extends Component {
               backgroundColor: '#fff'
             }}
             startRunningTimeout={0}
+          />
+        </div>
+
+        <div className="chart-row">
+          <div className="description">
+            <h3>Baseline</h3>
+          </div>
+          <LiveBarChart 
+            data={helpers.generateData(20, mocks.baselineWithNegatives, { prefix: 'Year', initialValue: 2000 }, 100)}
+            barHeight={30}
+            showTitle={false}
+            iterationTimeout={1000}
+            startRunningTimeout={1500}
+            baseline={0}
+            mainWrapperStyles={{
+              backgroundColor: '#fff'
+            }}
           />
         </div>
 
