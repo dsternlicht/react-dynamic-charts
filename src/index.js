@@ -25,9 +25,11 @@ export class LiveBarChart extends Component {
     iterationTitleStyles: PropTypes.object,
     labelStyles: PropTypes.object,
     onRunStart: PropTypes.func,
-    onRunEnd: PropTypes.func
+    onRunEnd: PropTypes.func,
+    startAutomatically: PropTypes.bool
   };
   static defaultProps = {
+    startAutomatically: true,
     roundTimeout: 200,
     data: [],
     startRunningTimeout: 0,
@@ -51,21 +53,29 @@ export class LiveBarChart extends Component {
   };
 
   componentDidMount() {
-    this.start();
+    this.init();
   }
 
-  start = () => {
+  init = () => {
     this.setState({
       dataQueue: this.props.data
     }, () => {
-      if (this.props.onRunStart) {
-        this.props.onRunStart();
+      if (this.props.startAutomatically) {
+        this.start();
+      } else {
+        this.setNextValues();
       }
-      this.nextStep(true);
     });
   }
 
-  nextStep = (firstRun) => {
+  start = () => {
+    if (this.props.onRunStart) {
+      this.props.onRunStart();
+    }
+    this.nextStep(true);
+  }
+
+  setNextValues = (callback = () => {}) => {
     const { dataQueue, activeItemIdx, currentValues } = this.state;
 
     if (!dataQueue[activeItemIdx]) {
@@ -77,10 +87,10 @@ export class LiveBarChart extends Component {
     }
 
     const roundData = dataQueue[activeItemIdx].values;
-    const nextRanking = {};
+    const nextValues = {};
     let highestValue = 0;
     roundData.map((c) => {
-      nextRanking[c.id] = {
+      nextValues[c.id] = {
         ...c,
         color: c.color || (currentValues[c.id] || {}).color || getRandomColor()
       };
@@ -93,13 +103,14 @@ export class LiveBarChart extends Component {
     });
 
     this.setState({
-      currentValues: nextRanking,
-      highestValue
-    });
-
-    this.setState({
+      currentValues: nextValues,
+      highestValue,
       activeItemIdx: activeItemIdx + 1
-    }, () => {
+    }, callback);
+  }
+
+  nextStep = (firstRun) => {
+    this.setNextValues(() => {
       this.roundTimeout = window.setTimeout(this.nextStep, firstRun ? this.props.startRunningTimeout : this.props.roundTimeout);
     });
   }

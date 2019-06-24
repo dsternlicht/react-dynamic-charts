@@ -8,6 +8,8 @@ import mocks from './mocks';
 import 'react-live-charts/dist/index.css';
 
 export default class App extends Component {
+  defaultChart = React.createRef();
+
   render () {
     return (
       <div>
@@ -24,7 +26,7 @@ export default class App extends Component {
             console.log('Started!');
           }}
           onRunEnd={() => {
-            console.log('Done!');
+            console.log('Ended!');
           }}
           startRunningTimeout={2500}
         />
@@ -49,8 +51,14 @@ export default class App extends Component {
           mainWrapperStyles={{
             backgroundColor: '#eee'
           }}
-          startRunningTimeout={2500}
+          startRunningTimeout={0}
+          startAutomatically={false}
+          ref={this.defaultChart}
+          onRunStart={() => {
+            console.log('It is on!');
+          }}
         />
+        <button onClick={() => this.defaultChart.current.start()}>Start Running!</button>
       </div>
     )
   }
