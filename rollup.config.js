@@ -25,7 +25,7 @@ export default {
   plugins: [
     external(),
     postcss({
-      modules: true,
+      modules: false,
       extract: true
     }),
     url(),
