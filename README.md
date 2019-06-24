@@ -1,6 +1,6 @@
 # react-live-charts ([demo](https://dsternlicht.github.io/react-live-charts/))
 
-> Super awesome live charts library for React.
+> Super awesome library for adding live charts visualizations to React.
 
 [![NPM](https://img.shields.io/npm/v/react-live-charts.svg)](https://www.npmjs.com/package/react-live-charts) [![Build Status](https://travis-ci.com/dsternlicht/react-live-charts.svg?branch=master)](https://travis-ci.com/dsternlicht/react-live-charts) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -61,11 +61,15 @@ class App extends Component {
 
 The `data` property in expected to be an array of objects. Each object will present an interation and will include the following fields:
 
+| Property      | Type          | Description                                                                                                                                  |
+|:--------------|:-------------------|:---------------------------------------------------------------------------------------------------------------------------------------------|
 | `name` | string | The name of the iteration. 
 | `values` | An array of data objects (see below).
 
 Each value in the `values` array will contain the following properties:
 
+| Property      | Type          | Description                                                                                                                                  |
+|:--------------|:-------------------|:---------------------------------------------------------------------------------------------------------------------------------------------|
 | `id` | string / number | A unique idetifier for the item. Note that it should be consistent across all interations. |
 | `label` | string / React Node | The label of the item. |
 | `value` | number | A numeric value of the item |
