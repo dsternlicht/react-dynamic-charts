@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-live-charts/static/css/main.a7910b5e.chunk.css",
-    "main.js": "/react-live-charts/static/js/main.0ae89f82.chunk.js",
-    "main.js.map": "/react-live-charts/static/js/main.0ae89f82.chunk.js.map",
-    "runtime~main.js": "/react-live-charts/static/js/runtime~main.f618a116.js",
-    "runtime~main.js.map": "/react-live-charts/static/js/runtime~main.f618a116.js.map",
-    "static/js/2.8e9ad766.chunk.js": "/react-live-charts/static/js/2.8e9ad766.chunk.js",
-    "static/js/2.8e9ad766.chunk.js.map": "/react-live-charts/static/js/2.8e9ad766.chunk.js.map",
+    "main.css": "/react-live-charts/css/main.a7910b5e.chunk.css",
+    "main.js": "/react-live-charts/js/main.0ae89f82.chunk.js",
+    "main.js.map": "/react-live-charts/js/main.0ae89f82.chunk.js.map",
+    "runtime~main.js": "/react-live-charts/js/runtime~main.f618a116.js",
+    "runtime~main.js.map": "/react-live-charts/js/runtime~main.f618a116.js.map",
+    "js/2.8e9ad766.chunk.js": "/react-live-charts/js/2.8e9ad766.chunk.js",
+    "js/2.8e9ad766.chunk.js.map": "/react-live-charts/js/2.8e9ad766.chunk.js.map",
+    "css/main.a7910b5e.chunk.css.map": "/react-live-charts/css/main.a7910b5e.chunk.css.map",
     "index.html": "/react-live-charts/index.html",
-    "precache-manifest.01bce6dbce26bcb83ffc090dd6f510c0.js": "/react-live-charts/precache-manifest.01bce6dbce26bcb83ffc090dd6f510c0.js",
-    "service-worker.js": "/react-live-charts/service-worker.js",
-    "static/css/main.a7910b5e.chunk.css.map": "/react-live-charts/static/css/main.a7910b5e.chunk.css.map"
+    "precache-manifest.3174764e5fad582b43b40da6dc7589be.js": "/react-live-charts/precache-manifest.3174764e5fad582b43b40da6dc7589be.js",
+    "service-worker.js": "/react-live-charts/service-worker.js"
   }
 }
