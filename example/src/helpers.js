@@ -2,7 +2,7 @@ function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-function generateData(iterations = 100, defaultValues = [], namePrefix = {}) {
+function generateData(iterations = 100, defaultValues = [], namePrefix = {}, maxJump = 100) {
   const arr = [];
   for (let i = 0; i <= iterations; i++) {
     const values = defaultValues.map((v, idx) => {
@@ -11,7 +11,7 @@ function generateData(iterations = 100, defaultValues = [], namePrefix = {}) {
       }
       return {
         ...v,
-        value: i === 0 ? this.getRandomNumber(1, 1000) : arr[i - 1].values[idx].value + this.getRandomNumber(0, 100)
+        value: i === 0 ? this.getRandomNumber(1, 1000) : arr[i - 1].values[idx].value + this.getRandomNumber(0, maxJump)
       }
     });
     arr.push({

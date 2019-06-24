@@ -26,10 +26,12 @@ export class LiveBarChart extends Component {
     labelStyles: PropTypes.object,
     onRunStart: PropTypes.func,
     onRunEnd: PropTypes.func,
-    startAutomatically: PropTypes.bool
+    startAutomatically: PropTypes.bool,
+    showTitle: PropTypes.bool
   };
   static defaultProps = {
     startAutomatically: true,
+    showTitle: true,
     roundTimeout: 200,
     data: [],
     startRunningTimeout: 0,
@@ -117,7 +119,7 @@ export class LiveBarChart extends Component {
 
   render() {
     const { currentValues, highestValue, dataQueue, activeItemIdx } = this.state;
-    const { barHeight, baseline, roundTimeout, chartWrapperStyles, mainWrapperStyles, iterationTitleStyles, labelStyles, baselineStyles } = this.props;
+    const { barHeight, baseline, roundTimeout, chartWrapperStyles, mainWrapperStyles, iterationTitleStyles, labelStyles, baselineStyles, showTitle } = this.props;
     const maxValue = highestValue / 0.85;
     const sortedCurrentValues = Object.keys(currentValues).sort((a, b) => currentValues[b].value - currentValues[a].value);
     const hasBaseline = baseline !== null && !isNaN(baseline);
@@ -127,7 +129,10 @@ export class LiveBarChart extends Component {
       <div className="live-chart" style={mainWrapperStyles}>
         {
           <React.Fragment>
-            <h1 style={iterationTitleStyles}>{currentItem.name}</h1>
+            {
+              showTitle &&
+              <h1 style={iterationTitleStyles}>{currentItem.name}</h1>
+            }
             <section className="chart" style={chartWrapperStyles}>
               {
                 hasBaseline &&
