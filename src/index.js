@@ -14,27 +14,34 @@ function getRandomColor() {
 
 export class LiveBarChart extends Component {
   static propTypes = {
-    roundTimeoutTtl: PropTypes.number,
+    roundTimeout: PropTypes.number,
     data: PropTypes.array,
-    startStreamingTimeout: PropTypes.number,
+    startRunningTimeout: PropTypes.number,
     barHeight: PropTypes.number,
     baseline: PropTypes.number,
     mainWrapperStyles: PropTypes.object,
-    chartWrapperStyles: PropTypes.object
+    chartWrapperStyles: PropTypes.object,
+    baselineStyles: PropTypes.object,
+    labelStyles: PropTypes.object,
+    onRunStart: PropTypes.func,
+    onRunEnd: PropTypes.func
   };
   static defaultProps = {
-    roundTimeoutTtl: 200,
+    roundTimeout: 200,
     data: [],
-    startStreamingTimeout: 0,
+    startRunningTimeout: 0,
     barHeight: 50,
     baseline: null,
     mainWrapperStyles: {},
-    chartWrapperStyles: {}
+    chartWrapperStyles: {},
+    baselineStyles: {},
+    labelStyles: {},
+    onRunStart: null,
+    onRunEnd: null
   };
   eventStream = null;
   roundTimeout = null;
   state = {
-    loading: true,
     dataQueue: [],
     activeItemIdx: 0,
     highestValue: 0,
@@ -46,11 +53,14 @@ export class LiveBarChart extends Component {
   }
 
   start = () => {
-    window.setTimeout(() => {
-      this.setState({
-        dataQueue: this.props.data
-      }, () => this.nextStep(true));
-    }, this.props.startStreamingTimeout);
+    this.setState({
+      dataQueue: this.props.data
+    }, () => {
+      if (this.props.onRunStart) {
+        this.props.onRunStart();
+      }
+      this.nextStep(true);
+    });
   }
 
   nextStep = (firstRun) => {
@@ -59,11 +69,10 @@ export class LiveBarChart extends Component {
     if (!dataQueue[activeItemIdx]) {
       console.log('No item in data queue.', activeItemIdx, dataQueue);
       this.roundTimeout = null;
+      if (this.props.onRunEnd) {
+        this.props.onRunEnd();
+      }
       return;
-    }
-
-    if (firstRun) {
-      this.setState({ loading: false });
     }
 
     const roundData = dataQueue[activeItemIdx].values;
@@ -90,13 +99,13 @@ export class LiveBarChart extends Component {
     this.setState({
       activeItemIdx: activeItemIdx + 1
     }, () => {
-      this.roundTimeout = window.setTimeout(this.nextStep, firstRun ? 2000 : this.props.roundTimeoutTtl);
+      this.roundTimeout = window.setTimeout(this.nextStep, firstRun ? this.props.startRunningTimeout : this.props.roundTimeout);
     });
   }
 
   render() {
     const { currentValues, highestValue, dataQueue, activeItemIdx } = this.state;
-    const { barHeight, baseline, roundTimeoutTtl, chartWrapperStyles, mainWrapperStyles } = this.props;
+    const { barHeight, baseline, roundTimeout, chartWrapperStyles, mainWrapperStyles, labelStyles, baselineStyles } = this.props;
     const maxValue = highestValue / 0.85;
     const sortedCurrentValues = Object.keys(currentValues).sort((a, b) => currentValues[b].value - currentValues[a].value);
     const hasBaseline = baseline !== null && !isNaN(baseline);
@@ -110,7 +119,7 @@ export class LiveBarChart extends Component {
             <section className="chart" style={chartWrapperStyles}>
               {
                 hasBaseline &&
-                <div className="baseline"><span>{baseline}</span></div>
+                <div className="baseline" style={baselineStyles}><span>{baseline}</span></div>
               }
               <div className={`chart-bars ${hasBaseline ? 'with-baseline' : ''}`} style={{ height: (barHeight + 20) * Object.keys(currentValues).length }}>
                 {
@@ -135,19 +144,12 @@ export class LiveBarChart extends Component {
                     }
 
                     return (
-                      <div className={`bar-wrapper ${behindbaseline ? 'behind-baseline' : ''}`} style={{ width: widthStr, top: (barHeight + 20) * idx, transitionDuration: roundTimeoutTtl / 1000 }} key={`bar_${key}`}>
-                        <label>
+                      <div className={`bar-wrapper ${behindbaseline ? 'behind-baseline' : ''}`} style={{ width: widthStr, top: (barHeight + 20) * idx, transitionDuration: roundTimeout / 1000 }} key={`bar_${key}`}>
+                        <label style={labelStyles}>
                           {
-                            !currentValueData.label &&
-                            <span>{key}</span>
-                          }
-                          {
-                            currentValueData.label &&
-                            (
-                              typeof currentValueData.label === 'string'
-                                ? <span>{currentValueData.label}</span>
-                                : currentValueData.label
-                            )
+                            !currentValueData.label
+                              ? key
+                              : currentValueData.label
                           }
                         </label>
                         <div className="bar" style={{ height: barHeight, background: typeof currentValueData.color === 'string' ? currentValueData.color : `linear-gradient(to right, ${currentValueData.color.join(',')})` }} />
