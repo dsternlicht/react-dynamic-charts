@@ -64,7 +64,7 @@ The `data` property in expected to be an array of objects. Each object will pres
 | Property      | Type          | Description                                                                                                                                  |
 |:--------------|:-------------------|:---------------------------------------------------------------------------------------------------------------------------------------------|
 | `name` | string | The name of the iteration. 
-| `values` | An array of data objects (see below).
+| `values` | array | An array of data objects (see below).
 
 Each value in the `values` array will contain the following properties:
 
