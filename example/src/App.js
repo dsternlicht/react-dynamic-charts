@@ -15,7 +15,7 @@ export default class App extends Component {
       <div>
         <LiveBarChart 
           data={helpers.generateData(100, mocks.defaultChart)}
-          roundTimeout={100}
+          iterationTimeout={100}
           showTitle={false}
           mainWrapperStyles={{
             backgroundColor: '#eee',
@@ -35,7 +35,7 @@ export default class App extends Component {
         <LiveBarChart 
           data={helpers.generateData(20, mocks.baselineWithNegatives, { prefix: 'Year', initialValue: 2000 }, 100)}
           barHeight={30}
-          roundTimeout={1000}
+          iterationTimeout={1000}
           startRunningTimeout={1500}
           baseline={0}
           mainWrapperStyles={{
@@ -45,7 +45,7 @@ export default class App extends Component {
 
         <LiveBarChart 
           data={helpers.generateData(100, mocks.customLabels, { prefix: 'Round' }, 10)}
-          roundTimeout={100}
+          iterationTimeout={100}
           chartWrapperStyles={{
             maxWidth: '1200px'
           }}

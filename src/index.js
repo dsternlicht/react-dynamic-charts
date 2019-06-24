@@ -14,7 +14,9 @@ function getRandomColor() {
 
 export class LiveBarChart extends Component {
   static propTypes = {
-    roundTimeout: PropTypes.number,
+    startAutomatically: PropTypes.bool,
+    showTitle: PropTypes.bool,
+    iterationTimeout: PropTypes.number,
     data: PropTypes.array,
     startRunningTimeout: PropTypes.number,
     barHeight: PropTypes.number,
@@ -25,14 +27,12 @@ export class LiveBarChart extends Component {
     iterationTitleStyles: PropTypes.object,
     labelStyles: PropTypes.object,
     onRunStart: PropTypes.func,
-    onRunEnd: PropTypes.func,
-    startAutomatically: PropTypes.bool,
-    showTitle: PropTypes.bool
+    onRunEnd: PropTypes.func
   };
   static defaultProps = {
     startAutomatically: true,
     showTitle: true,
-    roundTimeout: 200,
+    iterationTimeout: 200,
     data: [],
     startRunningTimeout: 0,
     barHeight: 50,
@@ -46,7 +46,7 @@ export class LiveBarChart extends Component {
     onRunEnd: null
   };
   eventStream = null;
-  roundTimeout = null;
+  iterationTimeout = null;
   state = {
     dataQueue: [],
     activeItemIdx: 0,
@@ -81,7 +81,7 @@ export class LiveBarChart extends Component {
     const { dataQueue, activeItemIdx, currentValues } = this.state;
 
     if (!dataQueue[activeItemIdx]) {
-      this.roundTimeout = null;
+      this.iterationTimeout = null;
       if (this.props.onRunEnd) {
         this.props.onRunEnd();
       }
@@ -113,13 +113,13 @@ export class LiveBarChart extends Component {
 
   nextStep = (firstRun) => {
     this.setNextValues(() => {
-      this.roundTimeout = window.setTimeout(this.nextStep, firstRun ? this.props.startRunningTimeout : this.props.roundTimeout);
+      this.iterationTimeout = window.setTimeout(this.nextStep, firstRun ? this.props.startRunningTimeout : this.props.iterationTimeout);
     });
   }
 
   render() {
     const { currentValues, highestValue, dataQueue, activeItemIdx } = this.state;
-    const { barHeight, baseline, roundTimeout, chartWrapperStyles, mainWrapperStyles, iterationTitleStyles, labelStyles, baselineStyles, showTitle } = this.props;
+    const { barHeight, baseline, iterationTimeout, chartWrapperStyles, mainWrapperStyles, iterationTitleStyles, labelStyles, baselineStyles, showTitle } = this.props;
     const maxValue = highestValue / 0.85;
     const sortedCurrentValues = Object.keys(currentValues).sort((a, b) => currentValues[b].value - currentValues[a].value);
     const hasBaseline = baseline !== null && !isNaN(baseline);
@@ -161,7 +161,7 @@ export class LiveBarChart extends Component {
                     }
 
                     return (
-                      <div className={`bar-wrapper ${behindbaseline ? 'behind-baseline' : ''}`} style={{ width: widthStr, top: (barHeight + 20) * idx, transitionDuration: roundTimeout / 1000 }} key={`bar_${key}`}>
+                      <div className={`bar-wrapper ${behindbaseline ? 'behind-baseline' : ''}`} style={{ width: widthStr, top: (barHeight + 20) * idx, transitionDuration: iterationTimeout / 1000 }} key={`bar_${key}`}>
                         <label style={labelStyles}>
                           {
                             !currentValueData.label
