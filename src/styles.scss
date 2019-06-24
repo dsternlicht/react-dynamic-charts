@@ -1,18 +1,20 @@
 .live-chart {
   width: 100%;
   padding: 20px;
+  box-sizing: border-box;
  
   h1 {
     font-weight: 700;
     font-size: 60px;
     text-transform: uppercase;
     text-align: center;
-    padding: 0 10px;
+    padding: 0 10px 20px;
     margin: 0;
   }
 
   .chart {
     position: relative;
+    margin: 20px auto;
   }
 
   .baseline {
@@ -27,7 +29,7 @@
     span {
       position: absolute;
       left: 0;
-      top: -40px;
+      top: -25px;
       transform: translateX(-50%);
       font-style: italic;
     }
@@ -35,16 +37,38 @@
 
   .chart-bars {
     position: relative;
-    margin: 50px auto;
-    height: 100%;
-    width: 75%;
+    width: 100%;
 
     &.with-baseline {
       .bar-wrapper {
         left: 50%;
+        padding-left: 0;
+
+        label {
+          left: -200px;
+        }
 
         &.behind-baseline {
           left: auto;
+          right: 50%;
+
+          label {
+            right: -210px;
+            left: auto;
+            text-align: left;
+            flex-direction: row-reverse;
+
+            img {
+              margin: 0 10px 0 0;
+            }
+          }
+
+          .value {
+            right: 100%;
+            left: auto;
+            margin-left: 0;
+            margin-right: 10px;
+          }
         }
       }
     } 
@@ -58,12 +82,14 @@
     top: 0;
     left: 0;
     transition: all 0.5s linear;
+    padding-left: 200px;
+    box-sizing: border-box;
 
     label {
       position: absolute;
       height: 100%;
       width: 200px;
-      left: -200px;
+      left: 0;
       padding: 0 10px;
       box-sizing: border-box;
       text-align: right;
@@ -94,29 +120,6 @@
 
     .bar {
       width: 100%;
-    }
-
-    &.behind-baseline {
-      left: auto;
-      right: 50%;
-
-      label {
-        right: -210px;
-        left: auto;
-        text-align: left;
-        flex-direction: row-reverse;
-
-        img {
-          margin: 0 10px 0 0;
-        }
-      }
-
-      .value {
-        right: 100%;
-        left: auto;
-        margin-left: 0;
-        margin-right: 10px;
-      }
     }
   }
 }

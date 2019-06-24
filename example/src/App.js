@@ -62,17 +62,23 @@ export default class App extends Component {
       <div className="bg">
         <LiveBarChart 
           data={data()}
-          barHeight={20}
           roundTimeoutTtl={750}
-          chartWrapperStyles={{
+          mainWrapperStyles={{
             backgroundColor: '#333',
             color: '#fff'
+          }}
+          chartWrapperStyles={{
+            maxWidth: '1200px'
           }}
         />
         <LiveBarChart 
           data={data(true)}
+          barHeight={30}
           roundTimeoutTtl={350}
           baseline={0}
+          mainWrapperStyles={{
+            padding: '50px'
+          }}
         />
       </div>
     )
