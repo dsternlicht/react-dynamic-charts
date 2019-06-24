@@ -43,19 +43,19 @@ class App extends Component {
 | Property      | Type               | Default                               | Description                                                                                                                                  |
 |:--------------|:-------------------|:--------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------|
 | `data`  | array           | []                                  | An array of objects that contain the data of the chart. |
-| `baseline`  | number           | null                                  | If you want the chart to have a baseline, add its number here. Could be useful for charts that include negative values |
+| `baseline`  | number           | null                                  | If you want the chart to have a baseline, add its number here. Could be useful for charts that include negative values. |
 | `iterationTimeout`  | number           | 200                         | Number of milliseconds you want between iterations. |
-| `startAutomatically`  | boolean           | true                                  | Whether the visualization should start running automatically. Default is `true` |
+| `startAutomatically`  | boolean           | true                                  | Whether the visualization should start running automatically. Default is `true`. |
 | `startRunningTimeout`  | number           | 0                         | Number of milliseconds you want before running the visualization. |
-| `onRunStart`  | function           | null                                  | A callback function that being called once the visualization **starts** |
-| `onRunEnd`  | function           | null                                  | A callback function that being called once the visualization **ends** |
-| `showTitle`  | boolean           | true                                  | Whether you want to show each iteration's title |
-| `barHeight`  | number           | 50                                  | The height (in pixels) of each bar item |
-| `mainWrapperStyles`  | object           | {}                                  | Styles object for the component's main wrapper |
-| `chartWrapperStyles`  | object           | {}                                  | Styles object for the chart wrapper |
-| `baselineStyles`  | object           | {}                                  | Styles object for the baseline element |
-| `iterationTitleStyles`  | object           | {}                                  | Styles object for the title element |
-| `labelStyles`  | object           | {}                                  | Styles object for the chart's labels |
+| `onRunStart`  | function           | null                                  | A callback function that being called once the visualization **starts**. |
+| `onRunEnd`  | function           | null                                  | A callback function that being called once the visualization **ends**. |
+| `showTitle`  | boolean           | true                                  | Whether you want to show each iteration's title. |
+| `barHeight`  | number           | 50                                  | The height (in pixels) of each bar item. |
+| `mainWrapperStyles`  | object           | {}                                  | Styles object for the component's main wrapper. |
+| `chartWrapperStyles`  | object           | {}                                  | Styles object for the chart wrapper. |
+| `baselineStyles`  | object           | {}                                  | Styles object for the baseline element. |
+| `iterationTitleStyles`  | object           | {}                                  | Styles object for the title element. |
+| `labelStyles`  | object           | {}                                  | Styles object for the chart's labels. |
 
 ## Data
 
@@ -72,7 +72,7 @@ Each value in the `values` array will contain the following properties:
 |:--------------|:-------------------|:---------------------------------------------------------------------------------------------------------------------------------------------|
 | `id` | string / number | A unique idetifier for the item. Note that it should be consistent across all interations. |
 | `label` | string / React Node | The label of the item. |
-| `value` | number | A numeric value of the item |
+| `value` | number | A numeric value of the item. |
 | `color` | string / array | Set a fixed color for the item. Could be also an array of colors that will generate a gradient effect. |
 
 ## License
