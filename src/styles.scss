@@ -1,12 +1,13 @@
 .live-chart {
   width: 100%;
+  padding: 20px;
  
   h1 {
     font-weight: 700;
     font-size: 60px;
     text-transform: uppercase;
     text-align: center;
-    padding: 50px 0;
+    padding: 0 10px;
     margin: 0;
   }
 
@@ -56,12 +57,15 @@
     position: absolute;
     top: 0;
     left: 0;
-    transition: all 0.5s ease;
+    transition: all 0.5s linear;
 
     label {
       position: absolute;
+      height: 100%;
       width: 200px;
-      left: -210px;
+      left: -200px;
+      padding: 0 10px;
+      box-sizing: border-box;
       text-align: right;
       top: 50%;
       transform: translateY(-50%);
@@ -72,7 +76,8 @@
       align-items: center;
 
       img {
-        max-height: 40px;
+        max-height: 100%;
+        max-width: 100%;
         margin-left: 10px;
       }
     }
