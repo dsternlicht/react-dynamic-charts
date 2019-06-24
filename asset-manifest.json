@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-live-charts/static/css/main.c5f6d63f.chunk.css",
+    "main.js": "/react-live-charts/static/js/main.3cdba65a.chunk.js",
+    "main.js.map": "/react-live-charts/static/js/main.3cdba65a.chunk.js.map",
+    "runtime~main.js": "/react-live-charts/static/js/runtime~main.f618a116.js",
+    "runtime~main.js.map": "/react-live-charts/static/js/runtime~main.f618a116.js.map",
+    "static/js/2.2edf551e.chunk.js": "/react-live-charts/static/js/2.2edf551e.chunk.js",
+    "static/js/2.2edf551e.chunk.js.map": "/react-live-charts/static/js/2.2edf551e.chunk.js.map",
+    "index.html": "/react-live-charts/index.html",
+    "precache-manifest.e74d63250699cb59c35b6eef6e115f43.js": "/react-live-charts/precache-manifest.e74d63250699cb59c35b6eef6e115f43.js",
+    "service-worker.js": "/react-live-charts/service-worker.js",
+    "static/css/main.c5f6d63f.chunk.css.map": "/react-live-charts/static/css/main.c5f6d63f.chunk.css.map"
+  }
+}
