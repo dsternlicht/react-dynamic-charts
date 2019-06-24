@@ -22,6 +22,7 @@ export class LiveBarChart extends Component {
     mainWrapperStyles: PropTypes.object,
     chartWrapperStyles: PropTypes.object,
     baselineStyles: PropTypes.object,
+    iterationTitleStyles: PropTypes.object,
     labelStyles: PropTypes.object,
     onRunStart: PropTypes.func,
     onRunEnd: PropTypes.func
@@ -35,6 +36,7 @@ export class LiveBarChart extends Component {
     mainWrapperStyles: {},
     chartWrapperStyles: {},
     baselineStyles: {},
+    iterationTitleStyles: {},
     labelStyles: {},
     onRunStart: null,
     onRunEnd: null
@@ -67,7 +69,6 @@ export class LiveBarChart extends Component {
     const { dataQueue, activeItemIdx, currentValues } = this.state;
 
     if (!dataQueue[activeItemIdx]) {
-      console.log('No item in data queue.', activeItemIdx, dataQueue);
       this.roundTimeout = null;
       if (this.props.onRunEnd) {
         this.props.onRunEnd();
@@ -105,7 +106,7 @@ export class LiveBarChart extends Component {
 
   render() {
     const { currentValues, highestValue, dataQueue, activeItemIdx } = this.state;
-    const { barHeight, baseline, roundTimeout, chartWrapperStyles, mainWrapperStyles, labelStyles, baselineStyles } = this.props;
+    const { barHeight, baseline, roundTimeout, chartWrapperStyles, mainWrapperStyles, iterationTitleStyles, labelStyles, baselineStyles } = this.props;
     const maxValue = highestValue / 0.85;
     const sortedCurrentValues = Object.keys(currentValues).sort((a, b) => currentValues[b].value - currentValues[a].value);
     const hasBaseline = baseline !== null && !isNaN(baseline);
@@ -115,7 +116,7 @@ export class LiveBarChart extends Component {
       <div className="live-chart" style={mainWrapperStyles}>
         {
           <React.Fragment>
-            <h1>{currentItem.name}</h1>
+            <h1 style={iterationTitleStyles}>{currentItem.name}</h1>
             <section className="chart" style={chartWrapperStyles}>
               {
                 hasBaseline &&
