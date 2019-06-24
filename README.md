@@ -85,12 +85,14 @@ Here's an example of a `data` object:
       {
         "id": 1,
         "label": "Test 1",
-        "value": 0
+        "value": 0,
+        "color": "red"
       },
       {
         "id": 2,
         "label": "Test 2",
-        "value": 0
+        "value": 0,
+        "color": ["yellow", "green"]
       }
     ]
   },
@@ -100,12 +102,14 @@ Here's an example of a `data` object:
       {
         "id": 1,
         "label": "Test 1",
-        "value": 10
+        "value": 10,
+        "color": "red"
       },
       {
         "id": 2,
         "label": "Test 2",
-        "value": 5
+        "value": 5,
+        "color": ["yellow", "green"]
       }
     ]
   },
@@ -115,16 +119,17 @@ Here's an example of a `data` object:
       {
         "id": 1,
         "label": "Test 1",
-        "value": 12
+        "value": 12,
+        "color": "red"
       },
       {
         "id": 2,
         "label": "Test 2",
-        "value": 21
+        "value": 21,
+        "color": ["yellow", "green"]
       }
     ]
   }
-  // ...
 ]
 ```
 
