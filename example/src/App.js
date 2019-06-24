@@ -16,7 +16,7 @@ const data = (negativeValues) => {
         id: 1,
         label: (
           <React.Fragment>
-            <img src={'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'} />
+            <img src={'https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png'} alt="Google" />
           </React.Fragment>
         ),
         value: i === 0 ? getRandomNumber(1, 1000) : arr[i - 1].values[0].value + getRandomNumber(0, 100)
@@ -31,7 +31,7 @@ const data = (negativeValues) => {
         color: '#f18421',
         label: (
           <React.Fragment>
-            <img src={'https://www.outbrain.com/images/logo.png?version=f80704f215b146c0d269a38cb085de856f58da30'} />
+            <img src={'https://www.outbrain.com/images/logo.png?version=f80704f215b146c0d269a38cb085de856f58da30'} alt="Outbrain" />
           </React.Fragment>
         ),
         value: i === 0 ? (negativeValues ? -getRandomNumber(1, 1000) : getRandomNumber(1, 1000)) : arr[i - 1].values[2].value + getRandomNumber(0, 100)
