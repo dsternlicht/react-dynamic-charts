@@ -71,6 +71,9 @@ export class LiveBarChart extends Component {
   }
 
   start = () => {
+    if (this.state.activeItemIdx > 1) {
+      return;
+    }
     if (this.props.onRunStart) {
       this.props.onRunStart();
     }

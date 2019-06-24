@@ -111,8 +111,42 @@ const customLabels = [
   },
 ];
 
+const runByCommand = [
+  {
+    id: 1,
+    color: '#000000',
+    label: 'This',
+    value: helpers.getRandomNumber(1, 1000)
+  },
+  {
+    id: 2,
+    color: '#333333',
+    label: 'is',
+    value: helpers.getRandomNumber(1, 1000)
+  },
+  {
+    id: 3,
+    color: '#666666',
+    label: 'So',
+    value: helpers.getRandomNumber(1, 1000)
+  },
+  {
+    id: 4,
+    color: '#999999',
+    label: 'Freaking',
+    value: helpers.getRandomNumber(1, 1000)
+  },
+  {
+    id: 5,
+    color: '#cccccc',
+    label: 'Awesome!!!',
+    value: helpers.getRandomNumber(1, 1000)
+  },
+];
+
 export default {
   defaultChart,
   baselineWithNegatives,
-  customLabels
+  customLabels,
+  runByCommand
 }

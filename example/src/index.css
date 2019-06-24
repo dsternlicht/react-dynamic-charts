@@ -5,3 +5,38 @@ body {
   padding: 0;
   font-family: 'Open Sans', sans-serif;
 }
+
+*:focus {
+  outline: 0;
+}
+
+button {
+  font-size: 16px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #111;
+}
+
+.chart-row {
+  display: flex;
+  align-items: stretch;
+  background: #f8f8f8;
+}
+
+.chart-row .description {
+  width: 420px;
+  box-sizing: border-box;
+  padding: 20px;
+  border-right: 1px solid #ccc;
+}
+
+.chart-row .description h3 {
+  margin: 0 0 20px;
+}

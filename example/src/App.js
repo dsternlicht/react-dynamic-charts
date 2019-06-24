@@ -13,53 +13,88 @@ export default class App extends Component {
   render () {
     return (
       <div>
-        <LiveBarChart 
-          data={helpers.generateData(100, mocks.defaultChart)}
-          iterationTimeout={100}
-          showTitle={false}
-          mainWrapperStyles={{
-            backgroundColor: '#eee',
-          }}
-          chartWrapperStyles={{
-            maxWidth: '1200px'
-          }}
-          onRunStart={() => {
-            console.log('Started!');
-          }}
-          onRunEnd={() => {
-            console.log('Ended!');
-          }}
-          startRunningTimeout={2500}
-        />
-        
-        <LiveBarChart 
-          data={helpers.generateData(20, mocks.baselineWithNegatives, { prefix: 'Year', initialValue: 2000 }, 100)}
-          barHeight={30}
-          iterationTimeout={1000}
-          startRunningTimeout={1500}
-          baseline={0}
-          mainWrapperStyles={{
-            padding: '50px'
-          }}
-        />
+        <div className="chart-row">
+          <div className="description">
+            <h3>Hello Live Charts!</h3>
+            <p>A few words about live charts</p>
+          </div>
+          <LiveBarChart 
+            data={helpers.generateData(100, mocks.defaultChart)}
+            iterationTimeout={100}
+            showTitle={false}
+            mainWrapperStyles={{
+              backgroundColor: '#fff',
+            }}
+            chartWrapperStyles={{
+              maxWidth: '1200px'
+            }}
+            onRunStart={() => {
+              console.log('Started!');
+            }}
+            onRunEnd={() => {
+              console.log('Ended!');
+            }}
+            startRunningTimeout={2500}
+          />
+        </div>
 
-        <LiveBarChart 
-          data={helpers.generateData(100, mocks.customLabels, { prefix: 'Round' }, 10)}
-          iterationTimeout={100}
-          chartWrapperStyles={{
-            maxWidth: '1200px'
-          }}
-          mainWrapperStyles={{
-            backgroundColor: '#eee'
-          }}
-          startRunningTimeout={0}
-          startAutomatically={false}
-          ref={this.defaultChart}
-          onRunStart={() => {
-            console.log('It is on!');
-          }}
-        />
-        <button onClick={() => this.defaultChart.current.start()}>Start Running!</button>
+        <div className="chart-row">
+          <div className="description">
+            <h3>Baseline</h3>
+          </div>
+          <LiveBarChart 
+            data={helpers.generateData(20, mocks.baselineWithNegatives, { prefix: 'Year', initialValue: 2000 }, 100)}
+            barHeight={30}
+            iterationTimeout={1000}
+            startRunningTimeout={1500}
+            baseline={0}
+            mainWrapperStyles={{
+              backgroundColor: '#fff'
+            }}
+          />
+        </div>
+
+        <div className="chart-row">
+          <div className="description">
+            <h3>Custom Labels</h3>
+          </div>
+          <LiveBarChart 
+            data={helpers.generateData(100, mocks.customLabels, { prefix: 'Round' }, 10)}
+            iterationTimeout={100}
+            chartWrapperStyles={{
+              maxWidth: '1200px'
+            }}
+            mainWrapperStyles={{
+              backgroundColor: '#fff'
+            }}
+            startRunningTimeout={0}
+          />
+        </div>
+
+        <div className="chart-row">
+          <div className="description">
+            <h3>Run by Command</h3>
+            <button onClick={() => this.defaultChart.current.start()}>Start Running!</button>
+          </div>
+          <LiveBarChart 
+            data={helpers.generateData(100, mocks.runByCommand)}
+            showTitle={false}
+            iterationTimeout={100}
+            barHeight={20}
+            chartWrapperStyles={{
+              maxWidth: '1200px'
+            }}
+            mainWrapperStyles={{
+              backgroundColor: '#fff'
+            }}
+            startAutomatically={false}
+            ref={this.defaultChart}
+            onRunStart={() => {
+              console.log('It is on!');
+            }}
+          />
+        </div>
+
       </div>
     )
   }
