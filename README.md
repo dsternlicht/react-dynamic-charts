@@ -75,6 +75,59 @@ Each value in the `values` array will contain the following properties:
 | `value` | number | A numeric value of the item. |
 | `color` | string / array | Set a fixed color for the item. Could be also an array of colors that will generate a gradient effect. |
 
+Here's an example of a `data` object:
+
+```json
+[
+  {
+    "name": "Round 1",
+    "values": [
+      {
+        "id": 1,
+        "label": "Test 1",
+        "value": 0
+      },
+      {
+        "id": 2,
+        "label": "Test 2",
+        "value": 0
+      }
+    ]
+  },
+  {
+    "name": "Round 2",
+    "values": [
+      {
+        "id": 1,
+        "label": "Test 1",
+        "value": 10
+      },
+      {
+        "id": 2,
+        "label": "Test 2",
+        "value": 5
+      }
+    ]
+  },
+  {
+    "name": "Round 3",
+    "values": [
+      {
+        "id": 1,
+        "label": "Test 1",
+        "value": 12
+      },
+      {
+        "id": 2,
+        "label": "Test 2",
+        "value": 21
+      }
+    ]
+  }
+  // ...
+]
+```
+
 ## License
 
 MIT © [Daniel Sternlicht](https://github.com/dsternlicht)
