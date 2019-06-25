@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-live-charts/css/main.ab56319d.chunk.css",
-    "main.js": "/react-live-charts/js/main.685ea55a.chunk.js",
-    "main.js.map": "/react-live-charts/js/main.685ea55a.chunk.js.map",
-    "runtime~main.js": "/react-live-charts/js/runtime~main.f618a116.js",
-    "runtime~main.js.map": "/react-live-charts/js/runtime~main.f618a116.js.map",
-    "js/2.8e9ad766.chunk.js": "/react-live-charts/js/2.8e9ad766.chunk.js",
-    "js/2.8e9ad766.chunk.js.map": "/react-live-charts/js/2.8e9ad766.chunk.js.map",
-    "css/main.ab56319d.chunk.css.map": "/react-live-charts/css/main.ab56319d.chunk.css.map",
-    "index.html": "/react-live-charts/index.html",
-    "precache-manifest.c956ebd0f8a59a39ef734aea0f28b0ae.js": "/react-live-charts/precache-manifest.c956ebd0f8a59a39ef734aea0f28b0ae.js",
-    "service-worker.js": "/react-live-charts/service-worker.js"
+    "main.css": "/react-dynamic-charts/css/main.ab56319d.chunk.css",
+    "main.js": "/react-dynamic-charts/js/main.901dad19.chunk.js",
+    "main.js.map": "/react-dynamic-charts/js/main.901dad19.chunk.js.map",
+    "runtime~main.js": "/react-dynamic-charts/js/runtime~main.edf84e3d.js",
+    "runtime~main.js.map": "/react-dynamic-charts/js/runtime~main.edf84e3d.js.map",
+    "js/2.8e9ad766.chunk.js": "/react-dynamic-charts/js/2.8e9ad766.chunk.js",
+    "js/2.8e9ad766.chunk.js.map": "/react-dynamic-charts/js/2.8e9ad766.chunk.js.map",
+    "css/main.ab56319d.chunk.css.map": "/react-dynamic-charts/css/main.ab56319d.chunk.css.map",
+    "index.html": "/react-dynamic-charts/index.html",
+    "precache-manifest.44e0295696de5cd1c5a36238f782b005.js": "/react-dynamic-charts/precache-manifest.44e0295696de5cd1c5a36238f782b005.js",
+    "service-worker.js": "/react-dynamic-charts/service-worker.js"
   }
 }
