@@ -1,25 +1,25 @@
-# react-live-charts ([demo](https://dsternlicht.github.io/react-live-charts/))
+# react-dynamic-charts ([demo](https://dsternlicht.github.io/react-dynamic-charts/))
 
-> Super awesome library for adding live charts visualizations to React.
+> Super awesome library for adding dynamic charts visualizations to React.
 
-[![NPM](https://img.shields.io/npm/v/react-live-charts.svg)](https://www.npmjs.com/package/react-live-charts) [![Build Status](https://travis-ci.com/dsternlicht/react-live-charts.svg?branch=master)](https://travis-ci.com/dsternlicht/react-live-charts) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-dynamic-charts.svg)](https://www.npmjs.com/package/react-dynamic-charts) [![Build Status](https://travis-ci.com/dsternlicht/react-dynamic-charts.svg?branch=master)](https://travis-ci.com/dsternlicht/react-dynamic-charts) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-[![Demo](https://raw.githubusercontent.com/dsternlicht/react-live-charts/master/example/demo.gif)](https://dsternlicht.github.io/react-live-charts/)
+[![Demo](https://raw.githubusercontent.com/dsternlicht/react-dynamic-charts/master/example/demo.gif)](https://dsternlicht.github.io/react-dynamic-charts/)
 
 ## Install
 
 ```bash
-npm install --save react-live-charts
+npm install --save react-dynamic-charts
 ```
 
 ## Usage
 
-Check out the [Demo](https://dsternlicht.github.io/react-live-charts/) to see it in action.
+Check out the [Demo](https://dsternlicht.github.io/react-dynamic-charts/) to see it in action.
 
 ```jsx
 import React, { Component } from 'react'
 
-import { LiveBarChart } from 'react-live-charts'
+import { LiveBarChart } from 'react-dynamic-charts'
 
 class App extends Component {
   state = {

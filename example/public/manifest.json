@@ -1,6 +1,6 @@
 {
-  "short_name": "react-live-charts",
-  "name": "react-live-charts",
+  "short_name": "react-dynamic-charts",
+  "name": "react-dynamic-charts",
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
