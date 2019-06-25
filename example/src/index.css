@@ -38,12 +38,14 @@ button:hover {
 
 .chart-row {
   display: flex;
+  justify-content: flex-start;
   align-items: stretch;
   background: #f8f8f8;
 }
 
 .chart-row .description {
-  width: 420px;
+  min-width: 420px;
+  max-width: 420px;
   box-sizing: border-box;
   padding: 20px;
   border-right: 1px solid #ccc;

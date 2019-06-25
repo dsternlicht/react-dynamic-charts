@@ -12,7 +12,7 @@ function getRandomColor() {
   return color;
 };
 
-export class LiveBarChart extends Component {
+export class DynamicBarChart extends Component {
   static propTypes = {
     startAutomatically: PropTypes.bool,
     showTitle: PropTypes.bool,

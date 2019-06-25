@@ -17,9 +17,10 @@ npm install --save react-dynamic-charts
 Check out the [Demo](https://dsternlicht.github.io/react-dynamic-charts/) to see it in action.
 
 ```jsx
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-import { LiveBarChart } from 'react-dynamic-charts'
+import { LiveBarChart } from 'react-dynamic-charts';
+import 'react-dynamic-charts/dist/index.css'; // Don't forget to import styling
 
 class App extends Component {
   state = {
