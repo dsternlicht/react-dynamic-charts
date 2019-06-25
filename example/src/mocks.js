@@ -144,9 +144,43 @@ const runByCommand = [
   },
 ];
 
+const stylesGoCrazy = [
+  {
+    id: 1,
+    color: ['#59C173', '#a17fe0', '#5D26C1'],
+    label: '😎',
+    value: helpers.getRandomNumber(1, 100)
+  },
+  {
+    id: 2,
+    color: ['#DA4453', '#89216B'],
+    label: '🤔',
+    value: helpers.getRandomNumber(1, 100)
+  },
+  {
+    id: 3,
+    color: ['#636363', '#a2ab58'],
+    label: '🤪',
+    value: helpers.getRandomNumber(1, 100)
+  },
+  {
+    id: 4,
+    color: ['#a8c0ff', '#3f2b96'],
+    label: '😁',
+    value: helpers.getRandomNumber(1, 100)
+  },
+  {
+    id: 5,
+    color: ['#40E0D0', '#FF8C00', '#FF0080'],
+    label: '😍',
+    value: helpers.getRandomNumber(1, 100)
+  },
+];
+
 export default {
   defaultChart,
   baselineWithNegatives,
   customLabels,
-  runByCommand
+  runByCommand,
+  stylesGoCrazy
 }

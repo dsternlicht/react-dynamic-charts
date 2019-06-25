@@ -94,12 +94,7 @@ export default class App extends Component {
             </SyntaxHighlighter>
           </div>
           <DynamicBarChart
-            data={helpers.generateData(
-              100,
-              mocks.customLabels,
-              { prefix: "Year", initialValue: 2000 },
-              10
-            )}
+            data={helpers.generateData(100, mocks.customLabels, { prefix: "Year", initialValue: 2000 }, 10)}
             iterationTimeout={100}
             chartWrapperStyles={{
               maxWidth: '1200px'
@@ -190,6 +185,68 @@ export default class App extends Component {
             ref={this.defaultChart}
             onRunStart={() => {
               console.log('It\'s on!');
+            }}
+          />
+        </div>
+        <div className="chart-row">
+          <div className="description">
+            <h3>Styles Go Crazy!</h3>
+            <p>Although Dynamic Charts have default styling, you have various of option to control and change how your chart looks like.</p>
+            <p></p>
+            <SyntaxHighlighter language="javascript" style={hybrid}>
+              {
+`<DynamicBarChart
+  data={this.state.data}
+  barHeight={50}
+  mainWrapperStyles={{
+    backgroundColor: '#333',
+    color: '#fff'
+  }}
+  chartWrapperStyles={{
+    maxWidth: '800px',
+    padding: '40px 20px'
+  }}
+  labelStyles={{
+    fontSize: '35px'
+  }}
+  iterationTitleStyles={{
+    color: '#fff',
+    fontSize: '24px',
+    backgroundColor: '#999',
+    borderRadius: '50em',
+    position: 'absolute',
+    right: '20px',
+    top: '440px',
+    padding: '10px 30px'
+  }}
+/>`
+              }
+            </SyntaxHighlighter>
+          </div>
+          <DynamicBarChart
+            data={helpers.generateData(100, mocks.stylesGoCrazy, { prefix: 'Year', initialValue: 2020 })}
+            iterationTimeout={100}
+            startRunningTimeout={4000}
+            barHeight={50}
+            chartWrapperStyles={{
+              maxWidth: '1200px',
+              padding: '40px 20px'
+            }}
+            mainWrapperStyles={{
+              backgroundColor: '#333'
+            }}
+            iterationTitleStyles={{
+              color: '#fff',
+              fontSize: '24px',
+              backgroundColor: '#999',
+              borderRadius: '50em',
+              position: 'absolute',
+              right: '20px',
+              top: '440px',
+              padding: '10px 30px'
+            }}
+            labelStyles={{
+              fontSize: '35px'
             }}
           />
         </div>
