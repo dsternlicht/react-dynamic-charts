@@ -42,7 +42,7 @@ class App extends Component {
 
 | Property      | Type               | Default                               | Description                                                                                                                                  |
 |:--------------|:-------------------|:--------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------|
-| `data`  | array           | []                                  | An array of objects that contain the data of the chart. |
+| `data`  | array           | []                                  | An array of objects that contain the data of the chart (see section [below](https://github.com/dsternlicht/react-dynamic-charts#data)). |
 | `baseline`  | number           | null                                  | If you want the chart to have a baseline, add its number here. Could be useful for charts that include negative values. |
 | `iterationTimeout`  | number           | 200                         | Number of milliseconds you want between iterations. |
 | `startAutomatically`  | boolean           | true                                  | Whether the visualization should start running automatically. Default is `true`. |
@@ -66,6 +66,7 @@ The `data` property in expected to be an array of objects. Each object will pres
 | `name` | string | The name of the iteration. 
 | `values` | array | An array of data objects (see below).
 
+
 Each value in the `values` array will contain the following properties:
 
 | Property      | Type          | Description                                                                                                                                  |
@@ -74,6 +75,7 @@ Each value in the `values` array will contain the following properties:
 | `label` | string / React Node | The label of the item. |
 | `value` | number | A numeric value of the item. |
 | `color` | string / array | Set a fixed color for the item. Could be also an array of colors that will generate a gradient effect. By default, if not set, each item will get a random color. |
+
 
 Here's an example of a `data` object:
 
