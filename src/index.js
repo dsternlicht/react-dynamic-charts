@@ -82,6 +82,12 @@ function DynamicBarChart(props) {
     if (props.startAutomatically || afterClick) {
       iterationTimeoutHolder = window.setTimeout(nextStep, firstRun ? props.startRunningTimeout : props.iterationTimeout);
     }
+
+    return () => {
+      if (iterationTimeoutHolder) {
+        window.clearTimeout(iterationTimeoutHolder);
+      }
+    };
   }, [activeItemIdx, afterClick]);
 
   const { barHeight, baseline, iterationTimeout, chartWrapperStyles, mainWrapperStyles, iterationTitleStyles, labelStyles, baselineStyles, showTitle } = props;
