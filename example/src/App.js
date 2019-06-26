@@ -10,8 +10,6 @@ import mocks from "./mocks";
 import "react-dynamic-charts/dist/index.css";
 
 export default class App extends Component {
-  defaultChart = React.createRef();
-
   render() {
     return (
       <div className="main-section">
@@ -151,24 +149,17 @@ export default class App extends Component {
 />`
               }
             </SyntaxHighlighter>
-            <p>Another option is to start the animation programmatically by calling the `start()` method, and disabling the `startAutomatically` flag:</p>
+            <p>Another option is to start the animation programmatically by adding a start button, and disabling the `startAutomatically` flag, and adding the `showStartButton` flag:</p>
             <SyntaxHighlighter language="javascript" style={hybrid}>
               {
-`<button onClick={() => this.defaultChart.current.start()}>
-  Start Running!
-</button>
-
-<DynamicBarChart
+`<DynamicBarChart
   data={this.state.data}
   startAutomatically={false}
-  ref={this.defaultChart}
+  showStartButton={true}
+  startButtonText={'Click Me!'}
 />`
               }
             </SyntaxHighlighter>
-            <p>Go ahead, try it out:</p>
-            <button onClick={() => this.defaultChart.current.start()}>
-              Click Me!
-            </button>
           </div>
           <DynamicBarChart
             data={helpers.generateData(100, mocks.runByCommand)}
@@ -182,7 +173,8 @@ export default class App extends Component {
               backgroundColor: '#fff'
             }}
             startAutomatically={false}
-            ref={this.defaultChart}
+            showStartButton={true}
+            startButtonText={'Click Me!'}
             onRunStart={() => {
               console.log('It\'s on!');
             }}
@@ -215,7 +207,8 @@ export default class App extends Component {
     backgroundColor: '#999',
     borderRadius: '50em',
     position: 'absolute',
-    right: '20px',
+    left: '50%',
+    transform: 'translateX(-50%)',
     top: '440px',
     padding: '10px 30px'
   }}
@@ -241,7 +234,8 @@ export default class App extends Component {
               backgroundColor: '#999',
               borderRadius: '50em',
               position: 'absolute',
-              right: '20px',
+              left: '50%',
+              transform: 'translateX(-50%)',
               top: '440px',
               padding: '10px 30px'
             }}

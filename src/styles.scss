@@ -3,6 +3,11 @@
   padding: 20px;
   box-sizing: border-box;
   position: relative;
+  text-align: center;
+
+  .start-button {
+    margin: 0 auto;
+  }
  
   h1 {
     font-weight: 700;
@@ -42,20 +47,24 @@
 
     &.with-baseline {
       .bar-wrapper {
-        left: 50%;
-        padding-left: 0;
+        left: 0;
+        padding-left: 50%;
 
         label {
-          left: -200px;
+          right: 50%;
+          width: auto;
         }
 
         &.behind-baseline {
           left: auto;
-          right: 50%;
+          right: 0;
+          padding-left: 0;
+          padding-right: 50%;
+          flex-direction: row-reverse;
 
           label {
-            right: -210px;
-            left: auto;
+            right: auto;
+            left: 50%;
             text-align: left;
             flex-direction: row-reverse;
 
@@ -82,9 +91,11 @@
     position: absolute;
     top: 0;
     left: 0;
-    transition: all 0.5s linear;
+    transition: top 0.5s linear;
     padding-left: 200px;
     box-sizing: border-box;
+    width: 100%;
+    justify-content: flex-start;
 
     label {
       position: absolute;
@@ -110,17 +121,14 @@
     }
 
     .value {
-      position: absolute;
-      left: 100%;
-      top: 50%;
-      transform: translateY(-50%);
       font-size: 16px;
       font-weight: 700;
       margin-left: 10px;
     }
 
     .bar {
-      width: 100%;
+      width: 0%;
+      transition: width 0.5s linear;
     }
   }
 }

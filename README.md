@@ -52,11 +52,14 @@ class App extends Component {
 | `onRunEnd`  | function           | null                                  | A callback function that being called once the visualization **ends**. |
 | `showTitle`  | boolean           | true                                  | Whether you want to show each iteration's title. |
 | `barHeight`  | number           | 50                                  | The height (in pixels) of each bar item. |
+| `showStartButton`  | boolean           | false                                  | Show a start button that triggers the animation. |
+| `startButtonText`  | string           | 'Start'                                  | The text that will appear in the start button. |
 | `mainWrapperStyles`  | object           | {}                                  | Styles object for the component's main wrapper. |
 | `chartWrapperStyles`  | object           | {}                                  | Styles object for the chart wrapper. |
 | `baselineStyles`  | object           | {}                                  | Styles object for the baseline element. |
 | `iterationTitleStyles`  | object           | {}                                  | Styles object for the title element. |
 | `labelStyles`  | object           | {}                                  | Styles object for the chart's labels. |
+| `startButtonStyles`  | object           | {}                                  | Styles object for the start button. |
 
 ## Data
 
