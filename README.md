@@ -20,7 +20,7 @@ Check out the [Demo](https://dsternlicht.github.io/react-dynamic-charts/) to see
 import React, { Component } from 'react';
 
 import { LiveBarChart } from 'react-dynamic-charts';
-import 'react-dynamic-charts/dist/index.css'; // Don't forget to import styling
+import 'react-dynamic-charts/dist/index.css'; // Don't forget to import the styles
 
 class App extends Component {
   state = {
