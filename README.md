@@ -1,6 +1,6 @@
 # react-dynamic-charts ([demo](https://dsternlicht.github.io/react-dynamic-charts/))
 
-> Super awesome library for adding dynamic charts visualizations to React apps.
+> Super awesome library for adding dynamic charts visualizations to ReactJS apps.
 
 [![NPM](https://img.shields.io/npm/v/react-dynamic-charts.svg)](https://www.npmjs.com/package/react-dynamic-charts) [![Build Status](https://travis-ci.com/dsternlicht/react-dynamic-charts.svg?branch=master)](https://travis-ci.com/dsternlicht/react-dynamic-charts) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
