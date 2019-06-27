@@ -92,7 +92,7 @@ export default class App extends Component {
             </SyntaxHighlighter>
           </div>
           <DynamicBarChart
-            data={helpers.generateData(100, mocks.customLabels, { prefix: "Year", initialValue: 2000 }, 10)}
+            data={helpers.generateData(100, mocks.customLabels, { prefix: "Year", initialValue: 1980 }, 10)}
             iterationTimeout={100}
             chartWrapperStyles={{
               maxWidth: '1200px'
@@ -122,7 +122,7 @@ export default class App extends Component {
             data={helpers.generateData(
               20,
               mocks.baselineWithNegatives,
-              { prefix: "Year", initialValue: 2000 },
+              { prefix: "Year", initialValue: 1980 },
               100
             )}
             barHeight={30}
