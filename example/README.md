@@ -9,7 +9,3 @@
 `npm start`
 
 The app will be available by default in **port 3000**.
-
-## Running
-
-`npm start`
