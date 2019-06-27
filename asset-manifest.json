@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/react-dynamic-charts/css/main.74096934.chunk.css",
-    "main.js": "/react-dynamic-charts/js/main.85934d23.chunk.js",
-    "main.js.map": "/react-dynamic-charts/js/main.85934d23.chunk.js.map",
+    "main.js": "/react-dynamic-charts/js/main.cf16c38c.chunk.js",
+    "main.js.map": "/react-dynamic-charts/js/main.cf16c38c.chunk.js.map",
     "runtime~main.js": "/react-dynamic-charts/js/runtime~main.edf84e3d.js",
     "runtime~main.js.map": "/react-dynamic-charts/js/runtime~main.edf84e3d.js.map",
     "js/2.4fe2bcb6.chunk.js": "/react-dynamic-charts/js/2.4fe2bcb6.chunk.js",
     "js/2.4fe2bcb6.chunk.js.map": "/react-dynamic-charts/js/2.4fe2bcb6.chunk.js.map",
     "css/main.74096934.chunk.css.map": "/react-dynamic-charts/css/main.74096934.chunk.css.map",
     "index.html": "/react-dynamic-charts/index.html",
-    "precache-manifest.bc0001b26b172bbdd8e4e3df3f2f8818.js": "/react-dynamic-charts/precache-manifest.bc0001b26b172bbdd8e4e3df3f2f8818.js",
+    "precache-manifest.1f3eef5177a278d92b40f9b0a7ff4f22.js": "/react-dynamic-charts/precache-manifest.1f3eef5177a278d92b40f9b0a7ff4f22.js",
     "service-worker.js": "/react-dynamic-charts/service-worker.js"
   }
 }

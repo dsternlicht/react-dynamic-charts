@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d7f9b98ce71599eea0c8",
+    "revision": "737d64ecc23d90af62d6",
     "url": "/react-dynamic-charts/css/main.74096934.chunk.css"
   },
   {
-    "revision": "6166aedb053ff93696e580267d771cde",
+    "revision": "c3b58525fdf64725a8e8c81a2f558947",
     "url": "/react-dynamic-charts/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-dynamic-charts/js/2.4fe2bcb6.chunk.js"
   },
   {
-    "revision": "d7f9b98ce71599eea0c8",
-    "url": "/react-dynamic-charts/js/main.85934d23.chunk.js"
+    "revision": "737d64ecc23d90af62d6",
+    "url": "/react-dynamic-charts/js/main.cf16c38c.chunk.js"
   },
   {
     "revision": "3f5462db8a24538aaab6",
