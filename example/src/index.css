@@ -54,3 +54,12 @@ button:hover {
 .chart-row .description h3 {
   margin: 0 0 20px;
 }
+
+.chart-row .description .buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.chart-row .description .buttons > * {
+  margin: 0 8px;
+}

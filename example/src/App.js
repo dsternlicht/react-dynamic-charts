@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { hybrid } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import GitHubButton from 'react-github-btn';
 
 import { DynamicBarChart } from "react-dynamic-charts";
 
@@ -21,6 +22,10 @@ export default class App extends Component {
         </a>
         <div className="chart-row">
           <div className="description">
+            <div className="buttons">
+              <GitHubButton href="https://github.com/dsternlicht/react-dynamic-charts" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star dsternlicht/react-dynamic-charts on GitHub">Star</GitHubButton>
+              <GitHubButton href="https://github.com/dsternlicht/react-dynamic-charts/fork" data-icon="octicon-repo-forked" data-size="large" data-show-count="true" aria-label="Fork dsternlicht/react-dynamic-charts on GitHub">Fork</GitHubButton>
+            </div>
             <h3>Hello Dynamic Charts!</h3>
             <p>React Dynamic Charts will allow you to create awesome animated dynamic charts to visualize your data.</p>
             <p>Here's the most basic example of how to use Dynamic Charts:</p>
