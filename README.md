@@ -63,7 +63,7 @@ class App extends Component {
 
 ## Data
 
-The `data` property in expected to be an array of objects. Each object will present an interation and will include the following fields:
+The `data` property is expected to be an array of objects. Each object will present an interation and will include the following fields:
 
 | Property      | Type          | Description                                                                                                                                  |
 |:--------------|:-------------------|:---------------------------------------------------------------------------------------------------------------------------------------------|
