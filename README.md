@@ -75,7 +75,7 @@ Each value in the `values` array will contain the following properties:
 
 | Property      | Type          | Description                                                                                                                                  |
 |:--------------|:-------------------|:---------------------------------------------------------------------------------------------------------------------------------------------|
-| `id` | string / number | A unique idetifier for the item. Note that it should be consistent across all interations. |
+| `id` | string / number | A unique identifier for the item. Note that it should be consistent across all iterations. |
 | `label` | string / React Node | The label of the item. |
 | `value` | number | A numeric value of the item. |
 | `color` | string / array | Set a fixed color for the item. Could be also an array of colors that will generate a gradient effect. By default, if not set, each item will get a random color. |
