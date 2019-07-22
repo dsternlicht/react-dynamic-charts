@@ -12,6 +12,10 @@ function getRandomColor() {
   return color;
 };
 
+function translateY(value) {
+  return `translateY(${value}px)`;
+}
+
 function DynamicBarChart(props) {
   const [dataQueue, setDataQueue] = useState([]);
   const [activeItemIdx, setActiveItemIdx] = useState(0);
@@ -90,9 +94,10 @@ function DynamicBarChart(props) {
     };
   }, [activeItemIdx, afterClick]);
 
-  const { barHeight, baseline, iterationTimeout, chartWrapperStyles, mainWrapperStyles, iterationTitleStyles, labelStyles, baselineStyles, showTitle } = props;
+  const keys = Object.keys(currentValues);
+  const { barGapSize, barHeight, baseline, iterationTimeout, chartWrapperStyles, mainWrapperStyles, iterationTitleStyles, labelStyles, baselineStyles, showTitle } = props;
   const maxValue = highestValue / 0.85;
-  const sortedCurrentValues = Object.keys(currentValues).sort((a, b) => currentValues[b].value - currentValues[a].value);
+  const sortedCurrentValues = keys.sort((a, b) => currentValues[b].value - currentValues[a].value);
   const hasBaseline = baseline !== null && !isNaN(baseline);
   const currentItem = dataQueue[activeItemIdx - 1] || {};
 
@@ -109,7 +114,7 @@ function DynamicBarChart(props) {
               hasBaseline &&
               <div className="baseline" style={baselineStyles}><span>{baseline}</span></div>
             }
-            <div className={`chart-bars ${hasBaseline ? 'with-baseline' : ''}`} style={{ height: (barHeight + 20) * Object.keys(currentValues).length }}>
+            <div className={`chart-bars ${hasBaseline ? 'with-baseline' : ''}`} style={{ height: (barHeight + barGapSize) * keys.length }}>
               {
                 sortedCurrentValues.map((key, idx) => {
                   const currentValueData = currentValues[key];
@@ -132,7 +137,7 @@ function DynamicBarChart(props) {
                   }
 
                   return (
-                    <div className={`bar-wrapper ${behindbaseline ? 'behind-baseline' : ''}`} style={{ top: (barHeight + 20) * idx, transitionDuration: iterationTimeout / 1000 }} key={`bar_${key}`}>
+                    <div className={`bar-wrapper ${behindbaseline ? 'behind-baseline' : ''}`} style={{ transform: translateY((barHeight + barGapSize) * idx), transitionDuration: iterationTimeout / 1000 }} key={`bar_${key}`}>
                       <label style={labelStyles}>
                         {
                           !currentValueData.label
@@ -165,6 +170,7 @@ DynamicBarChart.propTypes = {
   data: PropTypes.array,
   startRunningTimeout: PropTypes.number,
   barHeight: PropTypes.number,
+  barGapSize: PropTypes.number,
   baseline: PropTypes.number,
   showStartButton: PropTypes.bool,
   startButtonText: PropTypes.string,
@@ -185,6 +191,7 @@ DynamicBarChart.defaultProps = {
   data: [],
   startRunningTimeout: 0,
   barHeight: 50,
+  barGapSize: 20,
   baseline: null,
   showStartButton: false,
   startButtonText: 'Start',
