@@ -54,6 +54,7 @@ export default class App extends Component {
             </SyntaxHighlighter>
           </div>
           <DynamicBarChart
+            barGapSize={10}
             data={helpers.generateData(100, mocks.defaultChart, {
               prefix: "Iteration"
             })}
