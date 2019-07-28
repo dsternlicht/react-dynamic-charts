@@ -1,6 +1,6 @@
 # react-dynamic-charts ([demo](https://dsternlicht.github.io/react-dynamic-charts/))
 
-> A React library for creating dynamic charts visualizations based on dynamic data.
+> A React library for creating animated charts visualizations based on dynamic data.
 
 [![NPM](https://img.shields.io/npm/v/react-dynamic-charts.svg)](https://www.npmjs.com/package/react-dynamic-charts) [![Build Status](https://travis-ci.com/dsternlicht/react-dynamic-charts.svg?branch=master)](https://travis-ci.com/dsternlicht/react-dynamic-charts) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
